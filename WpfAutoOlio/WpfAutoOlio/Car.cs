@@ -14,6 +14,8 @@ namespace WpfAutoOlio
             get
             {
                 return maxSpeed;
+                //maksiminopeus
+
             }
             set
             {
