@@ -1,0 +1,60 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAutoOlio"
+        xmlns:CircularGauge="clr-namespace:CircularGauge;assembly=CircularGauge" x:Class="WpfAutoOlio.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="629.6" Width="905.6">
+    <Grid Margin="0,0,0,-4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="35*"/>
+            <ColumnDefinition Width="190*"/>
+            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="550*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnNaytaTiedot" Content="Näytä auton tiedot" HorizontalAlignment="Left" Height="54" Margin="35,384,0,0" VerticalAlignment="Top" Width="140" FontSize="14" Click="BtnNaytaTiedot_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnNaytaTiedot2" Content="Näytä auton2 tiedot" HorizontalAlignment="Left" Height="54" Margin="17.8,384,0,0" VerticalAlignment="Top" Width="160" FontSize="14" Click="BtnNaytaTiedot2_Click" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Height="47" Margin="35,453,0,0" VerticalAlignment="Top" Width="53" Click="BtnStart_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" Height="47" Margin="110.8,453,0,0" VerticalAlignment="Top" Width="53" Click="BtnStop_Click" Grid.Column="1"/>
+        <Button x:Name="btnStart2" Content="Start" HorizontalAlignment="Left" Height="47" Margin="17.9,453,0,0" VerticalAlignment="Top" Width="53" Click="BtnStart_Click" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnStop2" Content="Stop" HorizontalAlignment="Left" Height="47" Margin="107.8,453,0,0" VerticalAlignment="Top" Width="53" Click="BtnStop_Click" Grid.Column="3"/>
+        <Button x:Name="btnIndicator" Content="" HorizontalAlignment="Left" Height="47" Margin="61.8,453,0,0" VerticalAlignment="Top" Width="44" Grid.Column="1"/>
+        <Button x:Name="btnIndicator2" Content="" HorizontalAlignment="Left" Height="47" Margin="57.8,453,0,0" VerticalAlignment="Top" Width="44" Grid.Column="3"/>
+        <TextBox x:Name="txtMalli" HorizontalAlignment="Left" Height="30" Margin="35,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtVari" HorizontalAlignment="Left" Height="30" Margin="35,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtMaxSpeed" HorizontalAlignment="Left" Height="30" Margin="35,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Text="0" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtMalli2" HorizontalAlignment="Left" Height="30" Margin="17.9,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtVari2" HorizontalAlignment="Left" Height="30" Margin="17.9,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtMaxSpeed2" HorizontalAlignment="Left" Height="30" Margin="17.9,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Text="0" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblMalli" Content="Auton malli" HorizontalAlignment="Left" Margin="1.8,15,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label x:Name="lblMaxSpeed" Content="Huippunopeus" HorizontalAlignment="Left" Margin="1.8,133,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label x:Name="lblVari" Content="Auton väri" HorizontalAlignment="Left" Margin="1.8,75,0,0" VerticalAlignment="Top" Height="23" Grid.Column="1"/>
+        <Label x:Name="lblMalli2" Content="Auton 2 malli" HorizontalAlignment="Left" Margin="14.9,16,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="2"/>
+        <Label x:Name="lblMaxSpeed2" Content="Huippunopeus 2" HorizontalAlignment="Left" Margin="14.9,134,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="2"/>
+        <Label x:Name="lblVari2" Content="Auton 2 väri" HorizontalAlignment="Left" Margin="14.9,76,0,0" VerticalAlignment="Top" Height="23" Grid.ColumnSpan="2" Grid.Column="2"/>
+        <TextBox x:Name="txtCurrentSpeed" HorizontalAlignment="Left" Height="52" Margin="35,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Text="0" FontSize="36" FontWeight="Bold" TextAlignment="Center" Background="#FFDC0B0B" Foreground="#FFF0E8E8" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtCurrentSpeed2" HorizontalAlignment="Left" Height="52" Margin="17.9,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Text="0" Grid.Column="2" FontSize="36" TextAlignment="Center" Background="#FFDE0E0E" FontWeight="Bold" Foreground="#FFF1E8E8" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtHorsePower" HorizontalAlignment="Left" Height="30" Margin="35,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="0" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtHorsePower2" HorizontalAlignment="Left" Height="30" Margin="17.9,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" Text="0" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblHorsePower" Content="Hevosvoimat" HorizontalAlignment="Left" Margin="1.8,247,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label x:Name="lblHorsePower2" Content="Hevosvoimat2" HorizontalAlignment="Left" Margin="14.9,248,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="2"/>
+        <Label x:Name="lblTransMission" Content="Vaihteisto2" HorizontalAlignment="Left" Margin="1.8,304,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label x:Name="lblTransMission2" Content="Vaihteisto2" HorizontalAlignment="Left" Margin="14.9,305,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="2"/>
+        <ComboBox x:Name="cbTransMission" HorizontalAlignment="Left" Height="32" Margin="35,335,0,0" VerticalAlignment="Top" Width="164" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="cbTransMission2" Grid.Column="2" HorizontalAlignment="Left" Height="32" Margin="17.9,335,0,0" VerticalAlignment="Top" Width="160" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnAccelerate" Content="Kiihdytä" HorizontalAlignment="Left" Height="46" Margin="35,510,0,0" VerticalAlignment="Top" Width="73" Click="BtnAccelerate_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnBrake" Content="Jarruta" Grid.Column="1" HorizontalAlignment="Left" Height="46" Margin="90.8,510,0,0" VerticalAlignment="Top" Width="73" Click="BtnBrake_Click"/>
+        <Button x:Name="btnAccelerate2" Content="Kiihdytä" Grid.Column="2" HorizontalAlignment="Left" Height="46" Margin="17.9,510,0,0" VerticalAlignment="Top" Width="73" RenderTransformOrigin="0.082,0.37" Click="BtnAccelerate2_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnBrake2" Content="Jarruta" Grid.Column="3" HorizontalAlignment="Left" Height="46" Margin="87.8,510,0,0" VerticalAlignment="Top" Width="73" Click="BtnBrake2_Click"/>
+        <TextBox x:Name="txtGearCount" HorizontalAlignment="Left" Height="30" Margin="80.8,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="0" Grid.Column="1"/>
+        <Label x:Name="lblGearCount" Content="Vaihdelkm" HorizontalAlignment="Left" Margin="80.8,247,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBox x:Name="txtGearCount2" HorizontalAlignment="Left" Height="30" Margin="77.8,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Text="0" Grid.Column="3"/>
+        <Label x:Name="lblGearCount2" Content="Vaihdelkm" HorizontalAlignment="Left" Margin="77.8,248,0,0" VerticalAlignment="Top" Grid.Column="3"/>
+        <Button x:Name="btnClearAll" Content="Clear" Grid.Column="1" HorizontalAlignment="Left" Margin="90.8,10,0,0" VerticalAlignment="Top" Width="75" Click="btnClearAll_Click"/>
+
+        <CircularGauge:CircularGaugeControl x:Name="gauge" Grid.Column="3" HorizontalAlignment="Left" Height="307" Margin="246.8,193,0,0" VerticalAlignment="Top" Width="311"/>
+
+    </Grid>
+</Window>
